@@ -1,0 +1,136 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif, Aria;
+}
+
+header {
+    width: 100vw;
+    height: 18vh;
+    display: flex;
+    justify-content: center;
+    color: #777;
+    text-shadow: 1vw 1vw 1vw #C2BCA9;
+    font-size: 1.4rem;
+    font-family: 'Amatic SC', cursive, 'Times New Roman', Times, serif;
+    border-bottom: 0.15vh solid #A9ACC2;
+
+}
+
+.nav {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a, .nav a:visited{
+    margin: 0 10vw;
+    text-decoration: none;
+    color: #756F5A;
+}
+
+.nav a:hover {
+    color: #C2BCA9;
+}
+
+main {
+    margin: 0 auto;
+    width: 70vw;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.container {
+    display: grid;
+    min-height: 70vh;
+
+    grid-template-columns: 20vw 5vw 20vw 5vw 20vw;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.box {
+    height: 15vw;
+    width: 80%;
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.1vw;
+    border: 0.01vw solid #888;
+    box-shadow: 1vw 1vw 1vw rgb(212, 212, 212);
+}
+
+.box:hover {
+    opacity: 50%;
+}
+
+.box a, .box a:visited{
+    text-decoration: none;
+    position: absolute;
+    z-index: 1;
+    font-size: 2.2rem;
+    font-weight: 200;
+}
+
+
+.box img {
+    object-fit: fill;
+}
+
+.box-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.box img {
+    flex-shrink: 0;
+    max-width: 150%;
+    min-height: 100%;
+}
+
+
+.left {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #C2BCA9;
+}
+
+.left a {
+    color: #FFFDF7;
+}
+
+.middle {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #FFFDF7;
+}
+
+.middle a {
+    color: #C2BCA9;
+}
+
+
+.right {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.right a {
+    color: #FFFDF7;
+    text-shadow: 0.1vw 0.1vw 1vw #756F5A;
+}
+
+
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    border-top: 0.15vh solid #A9ACC2;
+}
