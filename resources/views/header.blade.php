@@ -11,14 +11,19 @@
 
 <body>
     <header>
-        <h1>för jag tror att när vi går genom tiden, att det bästa inte hänt än</h1>
-
+        <a href="{{ url('/') }}">
+            <h1>för jag tror att när vi går genom tiden, att det bästa inte hänt än</h1>
+        </a>
     </header>
-
-    <!-- <nav class="nav">
-        <a href=""> Hem </a>
-        <a href=""> Alla inlägg </a>
-        <a href=""> Skapa nytt inlägg </a>
-    </nav> -->
+    <nav class="nav">
+        @if ( $user )
+        <a href="{{ url('/new_post') }}"> Skapa inlägg </a>
+        <a href="{{ url('/logout') }} "> Logga ut </a>
+        <!-- <a href=""> Alla inlägg </a> -->
+        @else 
+        <a href="{{ url('/login') }}"> Logga in </a>
+        @endif
+    </nav>
+  
     <main>
 
