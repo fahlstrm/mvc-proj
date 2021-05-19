@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogPortalController;
+use Illuminate\Http\Request;
 
 
 /*
@@ -16,41 +17,43 @@ use App\Http\Controllers\BlogPortalController;
 |
 */
 
-Route::get('/', function ($user = null) {
+Route::get('/', function ($username = null) {
     return view('index', [
         'title' => 'mvc - bloggportal',
-        'user' => $user
+        'username' => $username
     ]);
 });
 
 Route::get('/login', function () {
     return view('login', [
         'title' => 'mvc - logga in',
-        'user' => null
+        'message' => null,
+        'username' => null
     ]);
 });
 
 
-Route::post('/login/{user}', [BlogPortalController::class, 'login']);
+Route::post('/login/{username}', [UserController::class, 'login']);
 
 Route::get('/create_blog', function () {
     return view('create_blog', [
         'title' => 'mvc - skapa blogg',
-        'user' => null
+        'username' => null
     ]);
 });
 
-Route::post('/create_blog', [BlogPortalController::class, 'createUser']);
+Route::post('/create_blog', [UserController::class, 'createUser']);
 
 
-Route::get('/create_post', function () {
+Route::get('/create_post', function (Request $request) {
     return view('create_post', [
-        'title' => "mvc - skapa inlägg", 
+        'title' => "mvc - skapa inlägg",
+        'username' => $request->session()->get('username'),
         ]);
 });
 
 
-Route::get('/logout', [BlogPortalController::class, 'logout']);
+Route::get('/logout', [UserController::class, 'logout']);
 
 
 Route::get('/new', function () {

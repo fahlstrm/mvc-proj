@@ -149,6 +149,10 @@ main {
     width: 20vw;
 }
 
+.post {
+    width: 50vw;
+}
+
 .form label {
     display: flex;
     flex-direction: row;
@@ -175,8 +179,8 @@ main {
 }
 
 .form textarea {
-    margin-top: 5vh;
-    width: 80%;
+    margin-top: 2vh;
+    width: 100%;
     min-height: 50vh;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -194,6 +198,12 @@ main {
     text-shadow: 0.1vw 0.1vw 1vw #756F5A;
 }
 
+.error {
+    color: #666;
+    text-shadow: 1vw 1vw 1vw #C2BCA9;
+    font-size: 1.5rem;
+    padding: 2vh;
+}
 
 .footer {
     width: 100vw;

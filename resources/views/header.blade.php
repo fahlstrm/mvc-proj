@@ -12,11 +12,15 @@
 <body>
     <header>
         <a href="{{ url('/') }}">
-            <h1>för jag tror att när vi går genom tiden, att det bästa inte hänt än</h1>
+        @if ( $username )
+            <h1> {{ $header }}</h1>
+        @else 
+            <h1> Bloggportalen </h1>
+        @endif
         </a>
     </header>
     <nav class="nav">
-        @if ( $user )
+        @if ( $username )
         <a href="{{ url('/new_post') }}"> Skapa inlägg </a>
         <a href="{{ url('/logout') }} "> Logga ut </a>
         <!-- <a href=""> Alla inlägg </a> -->

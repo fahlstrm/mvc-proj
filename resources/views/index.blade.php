@@ -8,7 +8,7 @@
     </div>
 
     <div class="box middle">
-        @if ($user)
+        @if ($username)
         <a href="{{ url('/create_post') }}">Nytt inlägg</a>
         @else 
         <a href="{{ url('/create_blog') }}">Ny blogg</a>

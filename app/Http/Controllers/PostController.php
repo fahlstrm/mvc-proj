@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
-class AuthenticationController extends Controller
+class PostController extends Controller
 {
     public function findByUser($user) 
     {
@@ -23,15 +23,6 @@ class AuthenticationController extends Controller
             ->get();
 
         return $user;
-    }
-
-    public function findHeader($username) {
-        $result = User::where('username', $username)
-        ->get();
-
-        var_dump($result);
-
-        return $result;
     }
 
     public function checkPassword($password, $user)
