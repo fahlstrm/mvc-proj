@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogPortalController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Http\Request;
 
 
@@ -17,10 +18,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function ($username = null) {
+Route::get('/', function (Request $request) {
     return view('index', [
-        'title' => 'mvc - bloggportal',
-        'username' => $username
+        'title' => $request->session()->get('blog'),
+        'header' => $request->session()->get('header'),
+        'username' => $request->session()->get('username'),
     ]);
 });
 
@@ -48,9 +50,12 @@ Route::post('/create_blog', [UserController::class, 'createUser']);
 Route::get('/create_post', function (Request $request) {
     return view('create_post', [
         'title' => "mvc - skapa inlägg",
+        'header' => $request->session()->get('header'),
         'username' => $request->session()->get('username'),
         ]);
 });
+
+Route::post('/create_post', [BlogController::class, 'createPost']);
 
 
 Route::get('/logout', [UserController::class, 'logout']);
@@ -60,8 +65,9 @@ Route::get('/new', function () {
     return view('new_post', ['title' => 'mvc - nytt inlägg' ]);
 });
 
-Route::get('/{blog_name}}', function () {
-    return view('show_blog', [
-        'title' => $blog_name, 
-        ]);
-});
+Route::get('/bloglist', [BlogController::class, 'getBlogs']);
+
+
+Route::get('/{blog}', [BlogController::class, 'showBlog']);
+
+

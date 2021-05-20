@@ -20,6 +20,7 @@ class User extends Model
     public $timestamps = false;
 
     public $table = "user";
+    
      /**
      * The primary key associated with the table.
      *

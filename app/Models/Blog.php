@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\Blog as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,13 +12,14 @@ class Blog extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public $table = "blog";
+
      /**
      * The primary key associated with the table.
      *
      * @var string
      */
     protected $primaryKey = 'blog_id';
-
 
 
     /**
@@ -33,23 +34,4 @@ class Blog extends Authenticatable
         'created_at',
         'updated_at'
     ];
-
-    // /**
-    //  * The attributes that should be hidden for arrays.
-    //  *
-    //  * @var array
-    //  */
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
-
-    // /**
-    //  * The attributes that should be cast to native types.
-    //  *
-    //  * @var array
-    //  */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
 }

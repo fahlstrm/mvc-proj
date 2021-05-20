@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -25,9 +26,10 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $auth = $this->auth->checkPassword($request->password, strtolower($request->user));
-        // var_dump($auth->header);
         if ($auth) {
             $request->session()->put('username', $request->username);
+            $request->session()->put('header', $auth->header);
+            $request->session()->put('blog', $auth->blog);
             return view('index', [
                 'title' => "mvc - inloggad som {$request->username}",
                 'header' => $auth->header,
@@ -46,6 +48,7 @@ class UserController extends Controller
     {
         $request->session()->put('username', null);
         $request->session()->put('header', null);
+        $request->session()->put('blog', "mvc - bloggportalen");
 
         return redirect('/')->with([
             'title' => "mvc - bloggportalen",
@@ -70,6 +73,7 @@ class UserController extends Controller
 
         $request->session()->put('username', $user->username);
         $request->session()->put('header', $user->header);
+        $request->session()->put('blog', $auth->blog);
 
         return redirect('/')->with([
             'title' => $user->blog,
@@ -77,6 +81,4 @@ class UserController extends Controller
             'header' =>  $request->session()->get('header'),
         ]);
     }
-
-
 }

@@ -21,7 +21,7 @@
     </header>
     <nav class="nav">
         @if ( $username )
-        <a href="{{ url('/new_post') }}"> Skapa inlägg </a>
+        <a href="{{ url('/create_post') }}"> Skapa inlägg </a>
         <a href="{{ url('/logout') }} "> Logga ut </a>
         <!-- <a href=""> Alla inlägg </a> -->
         @else 

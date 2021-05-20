@@ -4,7 +4,7 @@
 
     <div class="box left box-image">
         <img src="{{ asset('img/pexels-evie-shaffer-2748757.jpg')}} " alt="flower image">
-        <a href="">Blogglista</a>
+        <a href="{{ url('/bloglist') }}">Blogglista</a>
     </div>
 
     <div class="box middle">
@@ -15,10 +15,14 @@
         @endif
     </div>
 
-
     <div class="box right box-image">
         <img src="{{ asset('img/maria_ovchinnikova_7558442.jpg')}} " alt="flower image">
-        <a href="">Senaste inlägg</a>
+        @if ($username)
+
+        <a href="{{ url('/'.session('blog')) }}">Visa blogg</a>
+        @else 
+        <a href="{{ url('/login') }}">Logga in</a>
+        @endif
     </div>
 
 </div>

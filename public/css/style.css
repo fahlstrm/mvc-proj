@@ -31,7 +31,6 @@ header a:hover {
     justify-content: center;
     align-items: center;
     border-bottom: 0.15vh solid #A9ACC2;
-
 }
 
 .nav a, .nav a:visited{
@@ -104,13 +103,13 @@ main {
 }
 
 
-.left {
+.left, .left-table {
     grid-column: 1;
     grid-row: 1;
     background-color: #C2BCA9;
 }
 
-.left a {
+.left a, .left-table a {
     color: #FFFDF7;
 }
 
@@ -137,11 +136,17 @@ main {
     color: #C2BCA9;
 }
 
+.list a{
+    grid-column: 1;
+    display:block;
+}
+
 .content {
-    grid-column-start: 3;
+    grid-column-start: 4;
     width: 40vw;
     min-height: 65vh;
-    overflow-y: scroll;
+    max-height: 65vh;
+    overflow: auto;
 }
 
 .form {
@@ -188,7 +193,7 @@ main {
 }
 
 
-.right {
+.right, .right-table {
     grid-column: 5;
     grid-row: 1;
 }
