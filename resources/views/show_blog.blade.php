@@ -2,9 +2,12 @@
 
 <div class="container">
     <div class="list">
+        @if ($posts)
+
         @foreach ($posts as $post) 
             <a href="#{{ $post->title }} "> {{ $post->title }} </a>
         @endforeach
+        @endif
     </div>
 
     <div class="content">
@@ -13,11 +16,14 @@
             <a id="{{$post->title }}"><h2> {{ $post->title }} </h2></a>
             <p> {{ $post->post }} </p>
             <h6> Postat: {{ $post->created_at }} </h6>
-
+            @if ( session('username'))
+                <a href="{{ url('/change_post') }}">Ändra</a>
+                <a href="{{ url('/remove_post/'.$post->id) }}">Ta bort</a>
+            @endif
             <br>
         @endforeach
         @else 
-        <p>Inga postade inlägg... än!</p>
+            <p>Inga postade inlägg... än!</p>
         @endif
     </div>
 </div>

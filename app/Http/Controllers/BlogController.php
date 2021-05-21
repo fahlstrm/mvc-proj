@@ -28,14 +28,37 @@ class BlogController extends Controller
 
         $blog->save();
 
-        $posts = Blog::where('blog', $blog)->get();
+        $posts = Blog::where('blog', $blog->blog)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return view('show_blog', [
             'title' => $request->session()->get('blog'),
             'username' => $request->session()->get('username'),
             'header' =>  $request->session()->get('header'),
-            'posts' => empty($posts) ? null : $posts,
+            'posts' => ($posts->isEmpty()) ? null : $posts
+
         ]);
+    }
+
+    public function getPostById($id, Request $request)
+    {
+        $post = Blog::find($id);
+        
+        return view('remove_post', [
+            'title' => "Ta bort inlägg",
+            'username' => $request->session()->get('username'),
+            'header' =>  $request->session()->get('header'),
+            'post' => $post
+        ]);
+    }
+
+    public function removePost($id, Request $request)
+    {
+        $blog = Blog::find($id);
+        $post = Blog::find($id)->delete();
+        
+        return redirect('/'. $blog->blog);
     }
 
     public function getBlogs(Request $request)
@@ -100,14 +123,6 @@ class BlogController extends Controller
         return $latest;
     }
 
-
-    // public function countPost($blog)
-    // {
-    //     $postCount = Blog::where('blog', $blog)->count();
-
-    //     return $postCount;
-    // }
-
     public function showBlog($blog, Request $request)
     {
         $posts = Blog::where('blog', $blog)->orderBy('created_at', 'desc')->get();
@@ -116,7 +131,7 @@ class BlogController extends Controller
             'title' => $request->session()->get('blog'),
             'username' => $request->session()->get('username'),
             'header' =>  $request->session()->get('header'),
-            'posts' => empty($posts) ? null : $posts
+            'posts' => ($posts->isEmpty()) ? null : $posts
         ]);
     }
 

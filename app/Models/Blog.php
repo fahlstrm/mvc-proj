@@ -19,7 +19,7 @@ class Blog extends Authenticatable
      *
      * @var string
      */
-    protected $primaryKey = 'blog_id';
+    protected $primaryKey = 'id';
 
 
     /**

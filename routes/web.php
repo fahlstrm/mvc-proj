@@ -57,6 +57,10 @@ Route::get('/create_post', function (Request $request) {
 
 Route::post('/create_post', [BlogController::class, 'createPost']);
 
+Route::get('/remove_post/{id}', [BlogController::class, 'getPostById']);
+
+Route::post('/remove_post/{id}', [BlogController::class, 'removePost']);
+
 
 Route::get('/logout', [UserController::class, 'logout']);
 
