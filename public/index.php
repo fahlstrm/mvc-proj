@@ -3,7 +3,12 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+
 define('LARAVEL_START', microtime(true));
+if (gethostname() == 'websrv13') {
+    copy('../.env.dbwebb', '../.env');
+}
+
 
 /*
 |--------------------------------------------------------------------------
