@@ -12,13 +12,11 @@
     <exclude-pattern>server</exclude-pattern>
     <exclude-pattern>build</exclude-pattern>
     <exclude-pattern>cache</exclude-pattern>
-    <exclude-pattern>doc</exclude-pattern>
+    <!-- <exclude-pattern>doc</exclude-pattern> -->
     <!-- <exclude-pattern>theme</exclude-pattern> -->
     <exclude-pattern>vendor</exclude-pattern>
     <exclude-pattern>config</exclude-pattern>
-    <exclude-pattern>src</exclude-pattern>
     <exclude-pattern>public</exclude-pattern>
-    <exclude-pattern>test/bootstrap.php</exclude-pattern>
     
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
