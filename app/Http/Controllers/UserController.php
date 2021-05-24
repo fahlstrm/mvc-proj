@@ -20,7 +20,7 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $auth = $this->auth->checkPassword($request->input('password'), strtolower($request->input('user')));
+        $auth = $this->auth->checkPassword($request->input('password'), $request->input('username'), strtolower($request->input('user')));
         if ($auth) {
             $request->session()->put('username', $request->input('username'));
             $request->session()->put('header', $auth->header);
@@ -68,7 +68,7 @@ class UserController extends Controller
 
         $request->session()->put('username', $user->username);
         $request->session()->put('header', $user->header);
-        $request->session()->put('blog', $auth->blog);
+        $request->session()->put('blog', $user->blog);
 
         return redirect('/')->with([
             'title' => $user->blog,

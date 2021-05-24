@@ -41,7 +41,11 @@ class AuthenticationController extends Controller
 
     public function checkPassword($password, $user)
     {
-        $result = User::query()->where('password', $password)->get();
+        $result = User::query()
+            ->where('username', '=', $user)
+            ->where('password', '=', $password)
+            ->get();
+
         $auth = $this->checkUser($password, $result);
 
         return $auth;

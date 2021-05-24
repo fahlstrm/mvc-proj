@@ -8,6 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $username
+ * @property string $header
+ * @property string $blog
+ * @property string $password
+ */
 class User extends Model
 {
     use HasFactory;

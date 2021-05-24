@@ -51,6 +51,7 @@ Route::get('/create_post', function (Request $request) {
         'title' => "mvc - skapa inlägg",
         'header' => $request->session()->get('header'),
         'username' => $request->session()->get('username'),
+        'blog' => $request->session()->get('blog'),
         ]);
 });
 

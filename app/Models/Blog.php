@@ -8,6 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $blog
+ * @property string $title
+ * @property string $post
+ */
 class Blog extends Authenticatable
 {
     use HasFactory;

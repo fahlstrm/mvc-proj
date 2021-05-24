@@ -4,5 +4,3 @@ parameters:
         - config
         - app
         #- test
-    bootstrapFiles:
-        - .phpstan.constants.php

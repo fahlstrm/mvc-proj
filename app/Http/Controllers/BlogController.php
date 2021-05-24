@@ -58,7 +58,7 @@ class BlogController extends Controller
         $blog = Blog::query()->find($id);
         $post = Blog::query()->find($id)->delete();
 
-        return redirect('/' . $blog->blog);
+        return redirect('/' . $blog['blog']);
     }
 
     public function getBlogs(Request $request)
