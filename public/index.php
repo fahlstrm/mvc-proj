@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 
 define('LARAVEL_START', microtime(true));
-if (gethostname() == 'websrv13') {
+if (gethostname() == 'websrv14') {
     copy('../.env.dbwebb', '../.env');
 }
 

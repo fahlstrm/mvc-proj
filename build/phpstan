@@ -1,0 +1,32 @@
+ ------ --------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\BlogController.php                                                                 [39m 
+ ------ --------------------------------------------------------------------------------------------------------- 
+  25     Access to an undefined property App\Models\Blog::$blog.                                                  
+  26     Access to an undefined property App\Models\Blog::$title.                                                 
+  27     Access to an undefined property App\Models\Blog::$post.                                                  
+[39;49m  61     Access to an undefined property[39;49m[39;49m                                                                          [39;49m
+[39;49m         [39;49m[39;49mIlluminate\Database\Eloquent\Builder|(Illuminate\Database\Eloquent\Collection&iterable<Illuminate\Datab[39;49m[39;49m  [39;49m
+[39;49m         [39;49mase\Eloquent\Builder>)|Illuminate\Database\Eloquent\Model::$blog.                                        
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\UserController.php                     [39m 
+ ------ ------------------------------------------------------------- 
+  62     Access to an undefined property App\Models\User::$username.  
+  63     Access to an undefined property App\Models\User::$header.    
+  64     Access to an undefined property App\Models\User::$blog.      
+  65     Access to an undefined property App\Models\User::$password.  
+  71     Undefined variable: $auth                                    
+ ------ ------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Middleware\Authenticate.php                                                                    [39m 
+ ------ --------------------------------------------------------------------------------------------------------- 
+[39;49m  17     Method App\Http\Middleware\Authenticate::redirectTo() should return string|null but return statement is[39;49m[39;49m  [39;49m
+[39;49m         [39;49mmissing.                                                                                                 
+ ------ --------------------------------------------------------------------------------------------------------- 
+
+[37;41m                                                                                                                 [39;49m
+[37;41m [ERROR] Found 10 errors                                                                                         [39;49m
+[37;41m                                                                                                                 [39;49m
+

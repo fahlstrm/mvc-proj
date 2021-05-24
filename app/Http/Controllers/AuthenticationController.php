@@ -11,14 +11,14 @@ class AuthenticationController extends Controller
 {
     public function findByUser($user)
     {
-        $id = User::where('user', $user)->get();
+        $id = User::query()->where('user', $user)->get();
 
         return $id;
     }
 
     public function findById($id)
     {
-        $user = User::where('user_id', $id)->get();
+        $user = User::query()->where('user_id', $id)->get();
 
         return $user;
     }
@@ -27,21 +27,21 @@ class AuthenticationController extends Controller
     {
         // $user = User::where('blog', $blog)
         //     ->get();
-        $user = User::findOrFail($blog);
+        $user = User::query()->findOrFail($blog);
 
         return $user;
     }
 
     public function findHeader($username)
     {
-        $result = User::where('username', $username)->get();
+        $result = User::query()->where('username', $username)->get();
 
         return $result;
     }
 
     public function checkPassword($password, $user)
     {
-        $result = User::where('password', $password)->get();
+        $result = User::query()->where('password', $password)->get();
         $auth = $this->checkUser($password, $result);
 
         return $auth;

@@ -28,7 +28,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        $posts = Blog::where('blog', $blog->blog)
+        $posts = Blog::query()->where('blog', $blog->blog)
             ->orderBy('created_at', 'desc')
             ->get();
 
@@ -43,7 +43,7 @@ class BlogController extends Controller
 
     public function getPostById($id, Request $request)
     {
-        $post = Blog::find($id);
+        $post = Blog::query()->find($id);
 
         return view('remove_post', [
             'title' => "Ta bort inlägg",
@@ -55,8 +55,8 @@ class BlogController extends Controller
 
     public function removePost($id, Request $request)
     {
-        $blog = Blog::find($id);
-        $post = Blog::find($id)->delete();
+        $blog = Blog::query()->find($id);
+        $post = Blog::query()->find($id)->delete();
 
         return redirect('/' . $blog->blog);
     }
@@ -102,7 +102,7 @@ class BlogController extends Controller
         //     ->groupBy('blog.blog')
         //     ->get();
 
-        $joined = User::leftJoin('blog', 'blog.blog', '=', 'user.blog')
+        $joined = User::query()->leftJoin('blog', 'blog.blog', '=', 'user.blog')
             ->select([
                 'user.*',
                 DB::raw('COUNT(blog.blog) AS posts')
@@ -116,7 +116,7 @@ class BlogController extends Controller
 
     public function latestPosts()
     {
-        $latest = Blog::orderBy('created_at', 'desc')
+        $latest = Blog::query()->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
 
@@ -125,7 +125,7 @@ class BlogController extends Controller
 
     public function showBlog($blog, Request $request)
     {
-        $posts = Blog::where('blog', $blog)->orderBy('created_at', 'desc')->get();
+        $posts = Blog::query()->where('blog', $blog)->orderBy('created_at', 'desc')->get();
 
         return view('show_blog', [
             'title' => $request->session()->get('blog'),

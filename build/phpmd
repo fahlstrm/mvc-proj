@@ -1,0 +1,54 @@
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Console\Kernel.php:25	Avoid unused parameters such as '$schedule'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Exceptions\Handler.php:37	Avoid unused parameters such as '$e'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\AuthenticationController.php:14	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\AuthenticationController.php:19	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\AuthenticationController.php:42	Avoid unused parameters such as '$user'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:44	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:56	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:56	Avoid unused parameters such as '$request'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:59	Avoid unused local variables such as '$post'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:66	Avoid using static access to class '\App\Models\User' in method 'getBlogs'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:66	Avoid unused local variables such as '$blogs'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:108	Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'countPosts'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\PostController.php:14	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\PostController.php:20	Avoid variables with short names like $id. Configured minimum length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\PostController.php:28	Avoid unused parameters such as '$user'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\UserController.php:33	The method login uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\UserController.php:71	Avoid using undefined variables such as '$auth' which will lead to PHP notices.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\UserController.php:71	Avoid unused local variables such as '$auth'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Providers\BroadcastServiceProvider.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Broadcast' in method 'boot'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Providers\RouteServiceProvider.php:59	Avoid using static access to class '\Illuminate\Support\Facades\RateLimiter' in method 'configureRateLimiting'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\factories\UserFactory.php:30	Avoid using static access to class '\Illuminate\Support\Str' in method 'definition'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\factories\UserFactory.php:41	Avoid unused parameters such as '$attributes'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144844_create_user_table.php:14	Avoid using short method names like CreateUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144844_create_user_table.php:14	Avoid using short method names like CreateUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144844_create_user_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144844_create_user_table.php:29	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144858_create_blog_table.php:14	Avoid using short method names like CreateBlogTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144858_create_blog_table.php:14	Avoid using short method names like CreateBlogTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144858_create_blog_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_144858_create_blog_table.php:29	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:14	Avoid using short method names like AddUsernameToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:14	Avoid using short method names like AddUsernameToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:30	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150239_add_username_to_user_table.php:31	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:14	Avoid using short method names like AddHeaderToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:14	Avoid using short method names like AddHeaderToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:30	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150351_add_header_to_user_table.php:31	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:14	Avoid using short method names like AddBlogToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:14	Avoid using short method names like AddBlogToUserTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:31	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_150432_add_blog_to_user_table.php:32	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:14	Avoid using short method names like AddAttrToBlogTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:14	Avoid using short method names like AddAttrToBlogTable::up(). The configured minimum method name length is 3.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:16	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:17	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:32	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\migrations\2021_05_19_155427_add_attr_to_blog_table.php:33	Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.

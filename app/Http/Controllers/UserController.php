@@ -18,23 +18,17 @@ class UserController extends Controller
         $this->auth = new AuthenticationController();
     }
 
-    /**
-     * Show the profile for a given user.
-     *
-     * @param  int  $user
-     * @return \Illuminate\View\View
-     */
     public function login(Request $request)
     {
-        $auth = $this->auth->checkPassword($request->password, strtolower($request->user));
+        $auth = $this->auth->checkPassword($request->input('password'), strtolower($request->input('user')));
         if ($auth) {
-            $request->session()->put('username', $request->username);
+            $request->session()->put('username', $request->input('username'));
             $request->session()->put('header', $auth->header);
             $request->session()->put('blog', $auth->blog);
             return view('index', [
-                'title' => "mvc - inloggad som {$request->username}",
+                'title' => "mvc - inloggad som {$request->input('username')}",
                 'header' => $auth->header,
-                'username' => $request->username
+                'username' => $request->input('username')
             ]);
         } else {
             return view('login', [

@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function findByUser($user)
     {
-        $id = User::where('user', $user)
+        $id = User::query()->where('user', $user)
             ->get();
 
         return $id;
@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function findById($id)
     {
-        $user = User::where('user_id', $id)
+        $user = User::query()->where('user_id', $id)
             ->get();
 
         return $user;
@@ -27,7 +27,7 @@ class PostController extends Controller
 
     public function checkPassword($password, $user)
     {
-        $result = User::where('password', $password)
+        $result = User::query()->where('password', $password)
             ->get();
         $auth = $this->checkUser($password, $result);
 
