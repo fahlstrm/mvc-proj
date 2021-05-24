@@ -30,13 +30,12 @@ class UserController extends Controller
                 'header' => $auth->header,
                 'username' => $request->input('username')
             ]);
-        } else {
-            return view('login', [
-                'title' => "mvc - logga in",
-                'message' => "Inloggning misslyckades",
-                'username' => null
-            ]);
         }
+        return view('login', [
+            'title' => "mvc - logga in",
+            'message' => "Inloggning misslyckades",
+            'username' => null
+        ]);
     }
 
     public function logout(Request $request)

@@ -8,16 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Blog;
 use App\Models\User;
+use  Illuminate\Support\Facades\Schema;
 
 class BlogController extends Controller
 {
-    private object $user;
-
-    public function __construct()
-    {
-        $this->user = new AuthenticationController();
-    }
-
     public function createPost(Request $request)
     {
         $blog = new Blog();
@@ -53,17 +47,16 @@ class BlogController extends Controller
         ]);
     }
 
-    public function removePost($id, Request $request)
+    public function removePost($id)
     {
         $blog = Blog::query()->find($id);
-        $post = Blog::query()->find($id)->delete();
+        Blog::query()->find($id)->delete();
 
         return redirect('/' . $blog['blog']);
     }
 
     public function getBlogs(Request $request)
     {
-        $blogs = User::all();
 
         return view('blog_list', [
             'title' => "mvc -blogglista",

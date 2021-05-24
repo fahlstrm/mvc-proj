@@ -13,6 +13,8 @@
     <exclude-pattern>cache</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
     <exclude-pattern>database</exclude-pattern>
+    <exclude-pattern>providers</exclude-pattern>
+    <exclude-pattern>exceptions</exclude-pattern>
     <exclude-pattern>Kernel</exclude-pattern>
 
     <rule ref="rulesets/design.xml" />
