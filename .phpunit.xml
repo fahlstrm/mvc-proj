@@ -20,7 +20,7 @@
 
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">config</directory>
+            <!-- <directory suffix=".php">config</directory> -->
             <directory suffix=".php">./app</directory>
         </include>
         <report>
