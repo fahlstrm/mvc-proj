@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * Indicates if the model should be timestamped.
@@ -20,7 +21,7 @@ class User extends Model
     public $timestamps = false;
 
     public $table = "user";
-    
+
      /**
      * The primary key associated with the table.
      *

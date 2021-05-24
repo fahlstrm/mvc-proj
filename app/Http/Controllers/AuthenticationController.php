@@ -9,7 +9,7 @@ use App\Models\User;
 
 class AuthenticationController extends Controller
 {
-    public function findByUser($user) 
+    public function findByUser($user)
     {
         $id = User::where('user', $user)->get();
 
@@ -32,7 +32,8 @@ class AuthenticationController extends Controller
         return $user;
     }
 
-    public function findHeader($username) {
+    public function findHeader($username)
+    {
         $result = User::where('username', $username)->get();
 
         return $result;
@@ -41,18 +42,19 @@ class AuthenticationController extends Controller
     public function checkPassword($password, $user)
     {
         $result = User::where('password', $password)->get();
-        
         $auth = $this->checkUser($password, $result);
+
         return $auth;
     }
 
     public function checkUser($password, $result)
     {
         foreach ($result as $user) {
-           if ($user->password == $password) {
-               return $user;
-           } 
+            if ($user->password == $password) {
+                return $user;
+            }
         }
+
         return false;
     }
 }

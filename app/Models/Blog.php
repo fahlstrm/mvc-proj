@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     public $table = "blog";
 

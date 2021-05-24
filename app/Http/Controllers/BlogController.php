@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     private object $user;
 
-    public function construct__()
+    public function __construct()
     {
         $this->user = new AuthenticationController();
     }
@@ -44,7 +44,7 @@ class BlogController extends Controller
     public function getPostById($id, Request $request)
     {
         $post = Blog::find($id);
-        
+
         return view('remove_post', [
             'title' => "Ta bort inlägg",
             'username' => $request->session()->get('username'),
@@ -57,14 +57,14 @@ class BlogController extends Controller
     {
         $blog = Blog::find($id);
         $post = Blog::find($id)->delete();
-        
-        return redirect('/'. $blog->blog);
+
+        return redirect('/' . $blog->blog);
     }
 
     public function getBlogs(Request $request)
     {
         $blogs = User::all();
-        
+
         return view('blog_list', [
             'title' => "mvc -blogglista",
             'username' => $request->session()->get('username'),
@@ -77,8 +77,8 @@ class BlogController extends Controller
 
     public function countPosts()
     {
-        // $joined = User::leftJoin('blog', function($join_blog){ 
-        //    $join_blog-> on 
+        // $joined = User::leftJoin('blog', function($join_blog){
+        //    $join_blog-> on
         //        ('blog.blog', '=','user.blog');}
         // )->groupBy('blog.blog')->count();
 
@@ -134,7 +134,4 @@ class BlogController extends Controller
             'posts' => ($posts->isEmpty()) ? null : $posts
         ]);
     }
-
-    
-
 }

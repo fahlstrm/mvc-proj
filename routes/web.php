@@ -6,7 +6,6 @@ use App\Http\Controllers\BlogPortalController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Http\Request;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,7 +70,4 @@ Route::get('/new', function () {
 
 Route::get('/bloglist', [BlogController::class, 'getBlogs']);
 
-
 Route::get('/{blog}', [BlogController::class, 'showBlog']);
-
-

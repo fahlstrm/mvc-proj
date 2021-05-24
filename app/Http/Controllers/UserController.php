@@ -13,10 +13,11 @@ class UserController extends Controller
 {
     public object $auth;
 
-    public function __construct() 
+    public function __construct()
     {
-        $this->auth = new AuthenticationController;
+        $this->auth = new AuthenticationController();
     }
+
     /**
      * Show the profile for a given user.
      *
@@ -63,7 +64,7 @@ class UserController extends Controller
      */
     public function createUser(Request $request)
     {
-        $user = new User;
+        $user = new User();
         $user->username = strtolower($request->input('username'));
         $user->header = $request->input('header');
         $user->blog = $request->input('blog');

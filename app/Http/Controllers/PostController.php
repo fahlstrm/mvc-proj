@@ -9,7 +9,7 @@ use App\Models\User;
 
 class PostController extends Controller
 {
-    public function findByUser($user) 
+    public function findByUser($user)
     {
         $id = User::where('user', $user)
             ->get();
@@ -29,17 +29,17 @@ class PostController extends Controller
     {
         $result = User::where('password', $password)
             ->get();
-        
         $auth = $this->checkUser($password, $result);
+
         return $auth;
     }
 
     public function checkUser($password, $result)
     {
         foreach ($result as $user) {
-           if ($user->password == $password) {
-               return $user;
-           } 
+            if ($user->password == $password) {
+                return $user;
+            }
         }
         return false;
     }
