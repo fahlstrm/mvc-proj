@@ -20,7 +20,11 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+        var_dump($request->input('username'));
+        var_dump($request->input('password'));
+        var_dump($request->input('blog'));
         $auth = $this->auth->checkPassword($request->input('password'), $request->input('username'), strtolower($request->input('user')));
+        
         if ($auth) {
             $request->session()->put('username', $request->input('username'));
             $request->session()->put('header', $auth->header);

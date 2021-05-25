@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddHeaderToUserTable extends Migration
+class AddAttrsToUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,9 @@ class AddHeaderToUserTable extends Migration
         Schema::table('user', function (Blueprint $table) {
             Schema::table('user', function($table) {
                 $table->string('header');
+                $table->string('username');
+                $table->string('blog');
+                $table->string('password');
             });
         });
     }
@@ -30,6 +33,10 @@ class AddHeaderToUserTable extends Migration
         Schema::table('user', function (Blueprint $table) {
             Schema::table('user', function($table) {
                 $table->dropColumn('header');
+                $table->dropColumn('username');
+
+                $table->dropColumn('blog');
+                $table->dropColumn('password');
             });
         });
     }

@@ -45,7 +45,6 @@ Route::get('/create_blog', function () {
 
 Route::post('/create_blog', [UserController::class, 'createUser']);
 
-
 Route::get('/create_post', function (Request $request) {
     return view('create_post', [
         'title' => "mvc - skapa inlägg",
@@ -58,16 +57,9 @@ Route::get('/create_post', function (Request $request) {
 Route::post('/create_post', [BlogController::class, 'createPost']);
 
 Route::get('/remove_post/{id}', [BlogController::class, 'getPostById']);
-
 Route::post('/remove_post/{id}', [BlogController::class, 'removePost']);
 
-
 Route::get('/logout', [UserController::class, 'logout']);
-
-
-Route::get('/new', function () {
-    return view('new_post', ['title' => 'mvc - nytt inlägg' ]);
-});
 
 Route::get('/bloglist', [BlogController::class, 'getBlogs']);
 

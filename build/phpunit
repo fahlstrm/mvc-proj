@@ -1,11 +1,24 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-.......                                                             7 / 7 (100%)
+[41;37mF[0m..                                                                 3 / 3 (100%)
 
-Time: 00:01.062, Memory: 34.00 MB
+Time: 00:01.114, Memory: 40.00 MB
 
-[30;42mOK (7 tests, 7 assertions)[0m
+There was 1 failure:
 
-Generating code coverage report in Clover XML format ... done [00:00.133]
+1) Tests\Feature\RouteTest::testCreateUserToDatabase
+Failed asserting that a row in the table [user] matches the attributes {
+    "username": "testaren"
+}.
 
-Generating code coverage report in HTML format ... done [00:00.332]
+The table is empty..
+
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:28
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\tests\Feature\RouteTest.php:46
+
+[37;41mFAILURES![0m
+[37;41mTests: 3[0m[37;41m, Assertions: 3[0m[37;41m, Failures: 1[0m[37;41m.[0m
+
+Generating code coverage report in Clover XML format ... done [00:00.206]
+
+Generating code coverage report in HTML format ... done [00:00.391]

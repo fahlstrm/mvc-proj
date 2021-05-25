@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddBlogToUserTable extends Migration
+class AddAttrsToBlogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddBlogToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('user', function (Blueprint $table) {
-            Schema::table('user', function($table) {
+        Schema::table('blog', function (Blueprint $table) {
+            Schema::table('blog', function($table) {
                 $table->string('blog');
-                $table->string('password');
+                $table->string('title');
+                $table->string('post');
             });
         });
     }
@@ -28,10 +29,11 @@ class AddBlogToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            Schema::table('user', function($table) {
+        Schema::table('blog', function (Blueprint $table) {
+            Schema::table('blog', function($table) {
                 $table->dropColumn('blog');
-                $table->dropColumn('password');
+                $table->dropColumn('title');
+                $table->dropColumn('post');
             });
         });
     }
