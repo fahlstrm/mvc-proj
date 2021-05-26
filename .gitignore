@@ -5,7 +5,7 @@
 /vendor
 .env
 .env.dbwebb
-.env.test
+.env.testing
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml

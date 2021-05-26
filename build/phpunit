@@ -1,24 +1,125 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-[41;37mF[0m..                                                                 3 / 3 (100%)
+....string(8) "testaren"
+string(8) "password"
+string(11) "Testbloggen"
+object(App\Models\User)#22453 (27) {
+  ["timestamps"]=>
+  bool(false)
+  ["table"]=>
+  string(4) "user"
+  ["primaryKey":protected]=>
+  string(7) "user_id"
+  ["fillable":protected]=>
+  array(4) {
+    [0]=>
+    string(8) "username"
+    [1]=>
+    string(6) "header"
+    [2]=>
+    string(4) "blog"
+    [3]=>
+    string(8) "password"
+  }
+  ["connection":protected]=>
+  string(5) "mysql"
+  ["keyType":protected]=>
+  string(3) "int"
+  ["incrementing"]=>
+  bool(true)
+  ["with":protected]=>
+  array(0) {
+  }
+  ["withCount":protected]=>
+  array(0) {
+  }
+  ["perPage":protected]=>
+  int(15)
+  ["exists"]=>
+  bool(true)
+  ["wasRecentlyCreated"]=>
+  bool(false)
+  ["attributes":protected]=>
+  array(7) {
+    ["id"]=>
+    int(2)
+    ["created_at"]=>
+    NULL
+    ["updated_at"]=>
+    NULL
+    ["header"]=>
+    string(18) "Testar saker i php"
+    ["username"]=>
+    string(8) "testaren"
+    ["blog"]=>
+    string(11) "Testbloggen"
+    ["password"]=>
+    string(8) "password"
+  }
+  ["original":protected]=>
+  array(7) {
+    ["id"]=>
+    int(2)
+    ["created_at"]=>
+    NULL
+    ["updated_at"]=>
+    NULL
+    ["header"]=>
+    string(18) "Testar saker i php"
+    ["username"]=>
+    string(8) "testaren"
+    ["blog"]=>
+    string(11) "Testbloggen"
+    ["password"]=>
+    string(8) "password"
+  }
+  ["changes":protected]=>
+  array(0) {
+  }
+  ["casts":protected]=>
+  array(0) {
+  }
+  ["classCastCache":protected]=>
+  array(0) {
+  }
+  ["dates":protected]=>
+  array(0) {
+  }
+  ["dateFormat":protected]=>
+  NULL
+  ["appends":protected]=>
+  array(0) {
+  }
+  ["dispatchesEvents":protected]=>
+  array(0) {
+  }
+  ["observables":protected]=>
+  array(0) {
+  }
+  ["relations":protected]=>
+  array(0) {
+  }
+  ["touches":protected]=>
+  array(0) {
+  }
+  ["hidden":protected]=>
+  array(0) {
+  }
+  ["visible":protected]=>
+  array(0) {
+  }
+  ["guarded":protected]=>
+  array(1) {
+    [0]=>
+    string(1) "*"
+  }
+}
+........                                                      12 / 12 (100%)
 
-Time: 00:01.114, Memory: 40.00 MB
+Time: 00:01.985, Memory: 44.00 MB
 
-There was 1 failure:
+[30;42mOK (12 tests, 13 assertions)[0m
 
-1) Tests\Feature\RouteTest::testCreateUserToDatabase
-Failed asserting that a row in the table [user] matches the attributes {
-    "username": "testaren"
-}.
+Generating code coverage report in Clover XML format ... done [00:00.058]
 
-The table is empty..
-
-C:\Users\Frida\dbwebb-kurser\mvc\me\proj\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:28
-C:\Users\Frida\dbwebb-kurser\mvc\me\proj\tests\Feature\RouteTest.php:46
-
-[37;41mFAILURES![0m
-[37;41mTests: 3[0m[37;41m, Assertions: 3[0m[37;41m, Failures: 1[0m[37;41m.[0m
-
-Generating code coverage report in Clover XML format ... done [00:00.206]
-
-Generating code coverage report in HTML format ... done [00:00.391]
+Generating code coverage report in HTML format ... done [00:00.347]
