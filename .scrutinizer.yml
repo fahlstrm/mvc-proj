@@ -13,7 +13,6 @@ build:
     
     variables:
         APP_ENV: 'testing'
-        DB_CONNECTION: 'sqlite'
 
     tests:
         override:
