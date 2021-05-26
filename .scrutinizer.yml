@@ -10,7 +10,7 @@ build:
             environment:
                 php:
                     version: 7.4
-     variables:
+    variables:
         APP_ENV: 'testing'
         DB_DATABASE: 'database.sqlite'
     tests:
