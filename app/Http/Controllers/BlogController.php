@@ -57,7 +57,6 @@ class BlogController extends Controller
 
     public function getBlogs(Request $request)
     {
-
         return view('blog_list', [
             'title' => "mvc -blogglista",
             'username' => $request->session()->get('username'),
@@ -114,6 +113,7 @@ class BlogController extends Controller
             ->orderBy('posts', 'desc')
             ->get();
 
+        $joines = null;
         return $joined;
     }
 
