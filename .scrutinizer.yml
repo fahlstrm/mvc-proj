@@ -11,13 +11,13 @@ build:
                 php:
                     version: 7.4
     environment:
-        - cp database.sqlite database.sqlite
         variables:
             APP_ENV: 'testing'
             DB_DATABASE: 'database.sqlite'
     tests:
         before:
             - cp .env.scrutinizer .env
+            - cp database.sqlite database.sqlite
         override:
             -
                 command: "make phpunit"
