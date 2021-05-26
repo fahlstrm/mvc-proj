@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Tests\TestCase;
+use Tests\Feature\PDO;
 
 use App\Models\User;
 use App\Http\Controllers\UserController;
@@ -15,7 +16,6 @@ use App\Http\Controllers\UserController;
 
 class RouteTest extends TestCase
 {
-    use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -42,6 +42,8 @@ class RouteTest extends TestCase
     {
         $user = User::factory()->make();
 
+        var_dump($user);
+    
         $response = $this->withHeaders([
             'X-Header' => 'Value',
         ])->post('/create_blog', [
@@ -51,6 +53,7 @@ class RouteTest extends TestCase
             'blog' => $user->blog
             ]);
 
+        
         $this->assertDatabaseHas('user', [
             'username' => $user->username,
         ]);
@@ -83,7 +86,31 @@ class RouteTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function testFailLogin()
+    {
+        $user = User::factory()->make();
 
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/create_blog', [
+            'username' => $user->username,
+            'header' => $user->header,
+            'password' => $user->password,
+            'blog' => $user->blog
+            ]);
+
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/login/{username}', [
+            'username' => $user->username,
+            'password' => "hej",
+            'blog' => $user->blog
+            ]);
+
+        $response = $this->get('/login/{username}');
+
+        $response->assertStatus(405);
+    }
 
 
     public function testLogout()

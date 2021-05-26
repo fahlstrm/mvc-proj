@@ -1,9 +1,6 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-....string(8) "testaren"
-string(8) "password"
-string(11) "Testbloggen"
-object(App\Models\User)#22453 (27) {
+...object(App\Models\User)#13979 (28) {
   ["timestamps"]=>
   bool(false)
   ["table"]=>
@@ -22,7 +19,7 @@ object(App\Models\User)#22453 (27) {
     string(8) "password"
   }
   ["connection":protected]=>
-  string(5) "mysql"
+  NULL
   ["keyType":protected]=>
   string(3) "int"
   ["incrementing"]=>
@@ -33,45 +30,27 @@ object(App\Models\User)#22453 (27) {
   ["withCount":protected]=>
   array(0) {
   }
+  ["preventsLazyLoading"]=>
+  bool(false)
   ["perPage":protected]=>
   int(15)
   ["exists"]=>
-  bool(true)
+  bool(false)
   ["wasRecentlyCreated"]=>
   bool(false)
   ["attributes":protected]=>
-  array(7) {
-    ["id"]=>
-    int(2)
-    ["created_at"]=>
-    NULL
-    ["updated_at"]=>
-    NULL
-    ["header"]=>
-    string(18) "Testar saker i php"
+  array(4) {
     ["username"]=>
     string(8) "testaren"
+    ["header"]=>
+    string(18) "Testar saker i php"
     ["blog"]=>
     string(11) "Testbloggen"
     ["password"]=>
     string(8) "password"
   }
   ["original":protected]=>
-  array(7) {
-    ["id"]=>
-    int(2)
-    ["created_at"]=>
-    NULL
-    ["updated_at"]=>
-    NULL
-    ["header"]=>
-    string(18) "Testar saker i php"
-    ["username"]=>
-    string(8) "testaren"
-    ["blog"]=>
-    string(11) "Testbloggen"
-    ["password"]=>
-    string(8) "password"
+  array(0) {
   }
   ["changes":protected]=>
   array(0) {
@@ -114,12 +93,12 @@ object(App\Models\User)#22453 (27) {
     string(1) "*"
   }
 }
-........                                                      12 / 12 (100%)
+..........                                                     13 / 13 (100%)
 
-Time: 00:01.985, Memory: 44.00 MB
+Time: 00:01.479, Memory: 40.00 MB
 
-[30;42mOK (12 tests, 13 assertions)[0m
+[30;42mOK (13 tests, 14 assertions)[0m
 
-Generating code coverage report in Clover XML format ... done [00:00.058]
+Generating code coverage report in Clover XML format ... done [00:00.056]
 
-Generating code coverage report in HTML format ... done [00:00.347]
+Generating code coverage report in HTML format ... done [00:00.354]

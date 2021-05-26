@@ -37,7 +37,7 @@ return [
 
         'database' => [
             'driver' => 'local',
-            'root' => storage_path('proj/database/'),
+            'root' => storage_path('proj/database'),
         ],
 
         'public' => [
