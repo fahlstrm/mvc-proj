@@ -1,0 +1,37 @@
+
+FILE: C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php
+--------------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 1 LINE
+--------------------------------------------------------------------------------------
+ 29 | ERROR | [x] Expected at least 1 space before "."; 0 found
+ 29 | ERROR | [x] Expected at least 1 space after "."; 0 found
+--------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\Frida\dbwebb-kurser\mvc\me\proj\database\factories\UserFactory.php
+---------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+---------------------------------------------------------------------------------
+ 7 | ERROR | [x] Header blocks must be separated by a single blank line
+---------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+---------------------------------------------------------------------------------
+
+
+FILE: C:\Users\Frida\dbwebb-kurser\mvc\me\proj\tests\Feature\RouteTest.php
+--------------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 5 LINES
+--------------------------------------------------------------------------
+  10 | ERROR | [x] Header blocks must not contain blank lines
+  13 | ERROR | [x] Header blocks must be separated by a single blank line
+  46 | ERROR | [x] Whitespace found at end of line
+  56 | ERROR | [x] Whitespace found at end of line
+ 136 | ERROR | [x] Whitespace found at end of line
+--------------------------------------------------------------------------
+PHPCBF CAN FIX THE 5 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------
+
+Time: 4.06 secs; Memory: 8MB
+

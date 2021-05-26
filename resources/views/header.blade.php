@@ -13,7 +13,7 @@
     <header>
         <a href="{{ url('/') }}">
         @if ( session('username') )
-            <h1> {{ $header }}</h1>
+            <h1> {{ session('header') }}</h1>
         @else 
             <h1> Bloggportalen </h1>
         @endif
