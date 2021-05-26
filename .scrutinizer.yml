@@ -2,7 +2,7 @@ imports:
     - php
 
 filter:
-    excluded_paths: [vendor/*, tests/*, build/coverage/*, database]
+    excluded_paths: [vendor/*, tests/*, build/coverage/*]
 
 build:
     nodes:
@@ -12,6 +12,9 @@ build:
                     version: 7.4
     
     tests:
+        before:
+            - cp .env
+            - php artisan key:generate
         override:
             -
                 command: "make phpunit"
