@@ -1,7 +1,8 @@
 @include('header')
 
 <div class="container">
-    <div class="left-table">
+
+<div class="left-table">
         <h2>Inläggstoppen</h2>
         <table>
             <tr>
@@ -52,7 +53,6 @@
     @endforeach
     </table>
     </div>
-
 </div>
 
 @include('footer')

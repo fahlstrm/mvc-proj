@@ -10,11 +10,10 @@ build:
             environment:
                 php:
                     version: 7.4
-    
+    project_setup:
+        override:
+            - true
     tests:
-        before:
-            - cp .env.scrutinizer .env
-            - php artisan key:generate
         override:
             -
                 command: "make phpunit"
