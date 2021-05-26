@@ -33,13 +33,6 @@ class BlogController extends Controller
             'posts' => ($posts->isEmpty()) ? null : $posts,
             'blog' => $request->session()->get('blog'),
         ]);
-        // return view('show_blog', [
-        //     'title' => $request->session()->get('blog'),
-        //     'username' => $request->session()->get('username'),
-        //     'header' =>  $request->session()->get('header'),
-        //     'posts' => ($posts->isEmpty()) ? null : $posts,
-        //     'blog' => $request->session()->get('blog'),
-        // ]);
     }
 
     public function getPostById($id, Request $request)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1622037477">
-  <project timestamp="1622037477">
+<coverage generated="1622039883">
+  <project timestamp="1622039883">
     <file name="C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Console\Kernel.php">
       <class name="App\Console\Kernel" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="6" coveredelements="4"/>
@@ -55,7 +55,7 @@
     </file>
     <file name="C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php">
       <class name="App\Http\Controllers\BlogController" namespace="global">
-        <metrics complexity="9" methods="7" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="24" elements="53" coveredelements="28"/>
+        <metrics complexity="9" methods="7" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="24" elements="54" coveredelements="28"/>
       </class>
       <line num="15" type="method" name="createPost" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="17" type="stmt" count="0"/>
@@ -71,6 +71,7 @@
       <line num="31" type="stmt" count="0"/>
       <line num="32" type="stmt" count="0"/>
       <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
       <line num="38" type="method" name="getPostById" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="40" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
@@ -110,7 +111,7 @@
       <line num="125" type="stmt" count="2"/>
       <line num="126" type="stmt" count="2"/>
       <line num="127" type="stmt" count="2"/>
-      <metrics loc="130" ncloc="109" classes="1" methods="7" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="24" elements="53" coveredelements="28"/>
+      <metrics loc="130" ncloc="109" classes="1" methods="7" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="24" elements="54" coveredelements="28"/>
     </file>
     <file name="C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Controller.php">
       <class name="App\Http\Controllers\Controller" namespace="global">
@@ -317,6 +318,6 @@
       <line num="62" type="stmt" count="12"/>
       <metrics loc="63" ncloc="38" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="17" coveredelements="15"/>
     </file>
-    <metrics files="23" loc="915" ncloc="683" classes="14" methods="33" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="145" coveredstatements="91" elements="178" coveredelements="108"/>
+    <metrics files="23" loc="915" ncloc="683" classes="14" methods="33" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="146" coveredstatements="91" elements="179" coveredelements="108"/>
   </project>
 </coverage>

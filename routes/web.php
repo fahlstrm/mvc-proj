@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 Route::get('/', function (Request $request) {
     return view('index', [
         'title' => $request->session()->get('blog'),
+        'blog' => $request->session()->get('blog'),
         'header' => $request->session()->get('header'),
         'username' => $request->session()->get('username'),
     ]);
