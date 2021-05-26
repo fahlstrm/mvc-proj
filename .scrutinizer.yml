@@ -10,6 +10,11 @@ build:
             environment:
                 php:
                     version: 7.4
+    
+    variables:
+        APP_ENV: 'testing'
+        DB_DATABASE: 'sqlite'
+        DB_USERNAME: 'database.sqlite'
 
     tests:
         override:
