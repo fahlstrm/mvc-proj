@@ -10,14 +10,10 @@ build:
             environment:
                 php:
                     version: 7.4
-    environment:
-        variables:
-            APP_ENV: 'testing'
-            DB_DATABASE: 'database.sqlite'
+    project_setup:
+        override:
+            - true
     tests:
-        before:
-            - cp .env.scrutinizer .env
-            - cp database.sqlite database.sqlite
         override:
             -
                 command: "make phpunit"
