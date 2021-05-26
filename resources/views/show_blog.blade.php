@@ -9,7 +9,7 @@
         @endforeach
         @endif
     </div>
-
+    {{ session('blog')}}
     <div class="content">
         @if ($posts)
         @foreach ($posts as $post) 

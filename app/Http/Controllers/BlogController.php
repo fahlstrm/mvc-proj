@@ -26,13 +26,20 @@ class BlogController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('show_blog', [
+        return redirect('/'.$blog->blog)->with([
             'title' => $request->session()->get('blog'),
             'username' => $request->session()->get('username'),
             'header' =>  $request->session()->get('header'),
-            'posts' => ($posts->isEmpty()) ? null : $posts
-
+            'posts' => ($posts->isEmpty()) ? null : $posts,
+            'blog' => $request->session()->get('blog'),
         ]);
+        // return view('show_blog', [
+        //     'title' => $request->session()->get('blog'),
+        //     'username' => $request->session()->get('username'),
+        //     'header' =>  $request->session()->get('header'),
+        //     'posts' => ($posts->isEmpty()) ? null : $posts,
+        //     'blog' => $request->session()->get('blog'),
+        // ]);
     }
 
     public function getPostById($id, Request $request)
