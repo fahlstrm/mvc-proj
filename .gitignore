@@ -6,6 +6,7 @@
 .env
 .env.dbwebb
 .env.testing
+.env.local
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
