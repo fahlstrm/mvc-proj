@@ -10,6 +10,9 @@ build:
             environment:
                 php:
                     version: 7.4
+    project_setup:
+        override:
+            - true
     tests:
         override:
             -
@@ -17,7 +20,3 @@ build:
                 coverage:
                     file: "build/coverage.clover"
                     format: "php-clover"
-
-    environment: 
-        variables:
-            DATABASE_PASSWORD: "null"
