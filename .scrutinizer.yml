@@ -13,7 +13,7 @@ build:
     tests:
         before:
             - cp .env.scrutinizer .env
-            - php artisan key:generate
+            - php artisan migrate
         override:
             -
                 command: "make phpunit"
