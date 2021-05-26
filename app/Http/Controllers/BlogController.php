@@ -63,8 +63,18 @@ class BlogController extends Controller
             'username' => $request->session()->get('username'),
             'header' =>  $request->session()->get('header'),
             'posts' => $this->countPosts(),
-            'latest' => $this->latestPosts()
+            'latest' => $this->latestPosts(),
+            'created' => $this->latestCreated()
         ]);
+    }
+
+    public function latestCreated()
+    {
+        $latest = User::query()->orderBy('id', 'desc')
+        ->take(10)
+        ->get();
+
+        return $latest;
     }
 
 

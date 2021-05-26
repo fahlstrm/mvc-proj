@@ -18,6 +18,21 @@
     </table>
     </div>
 
+    <div class="middle-table">
+    <table>
+        <tr>
+            <th>Blogg</th>
+            <th>Namn</th>
+        </tr>
+    @foreach ($created as $create)
+        <tr>
+            <td><a href="{{ url('/'.$create->blog) }}"> {{ $create->blog }} </a></td>
+            <td>{{ $create->username}}</td>
+        </tr>
+    @endforeach
+    </table>
+    </div>
+
     <div class="right-table">
     <table>
         <tr>

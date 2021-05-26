@@ -198,6 +198,15 @@ main {
     grid-row: 1;
 }
 
+.middle-table {
+    grid-column: 3;
+}
+
+.right-table, .left-table, .middle-table {
+    max-height: 60vh;
+    overflow: auto;
+}
+
 .right a {
     color: #FFFDF7;
     text-shadow: 0.1vw 0.1vw 1vw #756F5A;

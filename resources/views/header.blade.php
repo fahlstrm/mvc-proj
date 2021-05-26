@@ -12,7 +12,7 @@
 <body>
     <header>
         <a href="{{ url('/') }}">
-        @if ( $username )
+        @if ( session('username') )
             <h1> {{ $header }}</h1>
         @else 
             <h1> Bloggportalen </h1>
@@ -20,7 +20,7 @@
         </a>
     </header>
     <nav class="nav">
-        @if ( $username )
+        @if ( session('username') )
         <a href="{{ url('/create_post') }}"> Skapa inlägg </a>
         <a href="{{ url('/logout') }} "> Logga ut </a>
         <!-- <a href=""> Alla inlägg </a> -->
