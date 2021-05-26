@@ -11,6 +11,7 @@ build:
                 php:
                     version: 7.4
     environment:
+        - cp database.sqlite database.sqlite
         variables:
             APP_ENV: 'testing'
             DB_DATABASE: 'database.sqlite'
