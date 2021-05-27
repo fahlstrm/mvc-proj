@@ -31,19 +31,17 @@ class RouteTest extends TestCase
     /**
      * Test that login-page is renderd
      */
-    public function testLogin()
-    {
-        $response = $this->get('/login');
+    // public function testLogin()
+    // {
+    //     $response = $this->get('/login');
 
-        $response->assertStatus(200);
-    }
+    //     // $response->assertStatus(200);
+    // }
 
     public function testCreateUserToDatabase()
     {
         $user = User::factory()->make();
 
-        var_dump($user);
-    
         $response = $this->withHeaders([
             'X-Header' => 'Value',
         ])->post('/create_blog', [
@@ -59,6 +57,7 @@ class RouteTest extends TestCase
         ]);
 
         $response->assertStatus(302);
+        User::query()->where('username','=', 'testaren')->delete();
     }
 
 
@@ -84,6 +83,8 @@ class RouteTest extends TestCase
             ]);
 
         $response->assertStatus(200);
+        User::query()->where('username','=', 'testaren')->delete();
+
     }
 
     public function testFailLogin()
@@ -110,6 +111,8 @@ class RouteTest extends TestCase
         $response = $this->get('/login/{username}');
 
         $response->assertStatus(405);
+        User::query()->where('username','=', 'testaren')->delete();
+
     }
 
 
@@ -121,34 +124,11 @@ class RouteTest extends TestCase
         // $response->assertRedirect($uri);
     }
 
-    public function testCreateUser()
-    {
-        $response = $this->get('/create_blog');
-        $response->assertStatus(200);
-    }
+    // public function testCreateUser()
+    // {
+    //     $response = $this->get('/create_blog');
+    //     $response->assertStatus(200);
+    // }
 
-    public function testCreatePost()
-    {
-        $response = $this->get('/create_post');
-        $response->assertStatus(200);
-    }
 
-    
-    public function testRemovePost()
-    {
-        $response = $this->get('/remove_post');
-        $response->assertStatus(200);
-    }
-
-    public function testBloglist()
-    {
-        $response = $this->get('/bloglist');
-        $response->assertStatus(200);
-    }
-
-    public function testShowBlog()
-    {
-        $response = $this->get('/{blog}}');
-        $response->assertStatus(200);
-    }
 }

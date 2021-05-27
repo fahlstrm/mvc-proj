@@ -1,25 +1,28 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-...object(App\Models\User)#13979 (28) {
-  ["timestamps"]=>
-  bool(false)
+.......string(3) "188"
+string(3) "188"
+string(4) "{id}"
+object(App\Models\Blog)#21158 (29) {
   ["table"]=>
-  string(4) "user"
+  string(4) "blog"
   ["primaryKey":protected]=>
-  string(7) "user_id"
+  string(2) "id"
   ["fillable":protected]=>
-  array(4) {
+  array(5) {
     [0]=>
-    string(8) "username"
-    [1]=>
-    string(6) "header"
-    [2]=>
     string(4) "blog"
+    [1]=>
+    string(5) "title"
+    [2]=>
+    string(4) "post"
     [3]=>
-    string(8) "password"
+    string(10) "created_at"
+    [4]=>
+    string(10) "updated_at"
   }
   ["connection":protected]=>
-  NULL
+  string(6) "sqlite"
   ["keyType":protected]=>
   string(3) "int"
   ["incrementing"]=>
@@ -35,22 +38,38 @@ PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
   ["perPage":protected]=>
   int(15)
   ["exists"]=>
-  bool(false)
+  bool(true)
   ["wasRecentlyCreated"]=>
   bool(false)
   ["attributes":protected]=>
-  array(4) {
-    ["username"]=>
-    string(8) "testaren"
-    ["header"]=>
-    string(18) "Testar saker i php"
+  array(6) {
+    ["id"]=>
+    string(3) "188"
     ["blog"]=>
     string(11) "Testbloggen"
-    ["password"]=>
-    string(8) "password"
+    ["title"]=>
+    string(6) "Rubrik"
+    ["post"]=>
+    string(33) "testar att posta till testbloggen"
+    ["created_at"]=>
+    string(19) "2021-05-27 19:17:21"
+    ["updated_at"]=>
+    string(19) "2021-05-27 19:17:21"
   }
   ["original":protected]=>
-  array(0) {
+  array(6) {
+    ["id"]=>
+    string(3) "188"
+    ["blog"]=>
+    string(11) "Testbloggen"
+    ["title"]=>
+    string(6) "Rubrik"
+    ["post"]=>
+    string(33) "testar att posta till testbloggen"
+    ["created_at"]=>
+    string(19) "2021-05-27 19:17:21"
+    ["updated_at"]=>
+    string(19) "2021-05-27 19:17:21"
   }
   ["changes":protected]=>
   array(0) {
@@ -81,6 +100,8 @@ PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
   ["touches":protected]=>
   array(0) {
   }
+  ["timestamps"]=>
+  bool(true)
   ["hidden":protected]=>
   array(0) {
   }
@@ -92,13 +113,15 @@ PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
     [0]=>
     string(1) "*"
   }
+  ["rememberTokenName":protected]=>
+  string(14) "remember_token"
 }
-..........                                                     13 / 13 (100%)
+......                                                     13 / 13 (100%)
 
-Time: 00:01.576, Memory: 40.00 MB
+Time: 00:01.845, Memory: 44.00 MB
 
-[30;42mOK (13 tests, 14 assertions)[0m
+[30;42mOK (13 tests, 16 assertions)[0m
 
-Generating code coverage report in Clover XML format ... done [00:00.081]
+Generating code coverage report in Clover XML format ... done [00:00.056]
 
-Generating code coverage report in HTML format ... done [00:00.423]
+Generating code coverage report in HTML format ... done [00:00.343]

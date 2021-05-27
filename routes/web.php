@@ -26,6 +26,9 @@ Route::get('/', function (Request $request) {
     ]);
 });
 
+Route::get('/blog_list', [BlogController::class, 'getBlogs']);
+
+
 Route::get('/login', function () {
     return view('login', [
         'title' => 'mvc - logga in',
@@ -57,11 +60,13 @@ Route::get('/create_post', function (Request $request) {
 
 Route::post('/create_post', [BlogController::class, 'createPost']);
 
-Route::get('/remove_post/{id}', [BlogController::class, 'getPostById']);
+Route::get('/remove_post/{id}', [BlogController::class, 'removePostById']);
 Route::post('/remove_post/{id}', [BlogController::class, 'removePost']);
+
+Route::get('/change_post/{id}', [BlogController::class, 'changePostById']);
+Route::post('/change_post/{id}', [BlogController::class, 'changePost']);
 
 Route::get('/logout', [UserController::class, 'logout']);
 
-Route::get('/bloglist', [BlogController::class, 'getBlogs']);
 
 Route::get('/{blog}', [BlogController::class, 'showBlog']);

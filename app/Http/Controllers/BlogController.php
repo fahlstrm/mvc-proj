@@ -16,11 +16,12 @@ class BlogController extends Controller
     {
         $blog = new Blog();
 
-        $blog->blog =  $request->session()->get('blog');
+        $blog->blog =  $request->input('blog');
         $blog->title = $request->input('title');
         $blog->post = $request->input('post');
 
         $blog->save();
+
 
         $posts = Blog::query()->where('blog', $blog->blog)
             ->orderBy('created_at', 'desc')
@@ -35,7 +36,7 @@ class BlogController extends Controller
         ]);
     }
 
-    public function getPostById($id, Request $request)
+    public function removePostById($id, Request $request)
     {
         $post = Blog::query()->find($id);
 
@@ -55,6 +56,36 @@ class BlogController extends Controller
         return redirect('/' . $blog['blog']);
     }
 
+    public function changePostById($id, Request $request)
+    {
+        $post = Blog::query()->find($id);
+
+        return view('change_post', [
+            'title' => $request->session()->get('blog'),
+            'username' => $request->session()->get('username'),
+            'header' =>  $request->session()->get('header'),
+            'post' => $post
+        ]);
+    }
+
+    public function changePost($id, Request $request)
+    {
+        // var_dump($request->id);
+        $blog = Blog::query()->find($request->id);
+        // var_dump($id);
+
+        // $blog = Blog::query()->where('id', $id)->get();
+        // var_dump($blog);
+
+        $blog->title = $request->input('title');
+        $blog->post = $request->input('post');
+        
+        $blog->save();
+
+        return redirect('/' . $blog['blog']);
+    }
+
+
     public function getBlogs(Request $request)
     {
         return view('blog_list', [
@@ -69,7 +100,7 @@ class BlogController extends Controller
 
     public function latestCreated()
     {
-        $latest = User::query()->orderBy('id', 'desc')
+        $latest = User::query()->orderBy('user_id', 'desc')
         ->take(10)
         ->get();
 
@@ -126,6 +157,7 @@ class BlogController extends Controller
         return $latest;
     }
 
+
     public function showBlog($blog, Request $request)
     {
         $posts = Blog::query()->where('blog', $blog)->orderBy('created_at', 'desc')->get();
@@ -133,7 +165,7 @@ class BlogController extends Controller
         return view('show_blog', [
             'title' => $request->session()->get('blog'),
             'username' => $request->session()->get('username'),
-            'header' =>  $request->session()->get('header'),
+            'header' =>  $blog,
             'posts' => ($posts->isEmpty()) ? null : $posts
         ]);
     }

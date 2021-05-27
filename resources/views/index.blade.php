@@ -4,7 +4,7 @@
 
     <div class="box left box-image">
         <img src="{{ asset('img/pexels-evie-shaffer-2748757.jpg')}} " alt="flower image">
-        <a href="{{ url('/bloglist') }}">Blogglista</a>
+        <a href="{{ url('/blog_list') }}">Blogglista</a>
     </div>
 
     <div class="box middle">

@@ -17,7 +17,7 @@
             <p> {{ $post->post }} </p>
             <h6> Postat: {{ $post->created_at }} </h6>
             @if ( session('blog') == collect(request()->segments())->last())
-                <a href="{{ url('/change_post') }}">Ändra</a>
+                <a href="{{ url('/change_post/'.$post->id) }}">Ändra</a>
                 <a href="{{ url('/remove_post/'.$post->id) }}">Ta bort</a>
             @endif
             <br>
