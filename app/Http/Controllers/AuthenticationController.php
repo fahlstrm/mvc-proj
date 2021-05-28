@@ -23,14 +23,15 @@ class AuthenticationController extends Controller
         return $user;
     }
 
-    public function findByBlog($blog)
-    {
-        // $user = User::where('blog', $blog)
-        //     ->get();
-        $user = User::query()->findOrFail($blog);
+    // public function findByBlog($blog)
+    // {
+    //     var_dump($blog);
+    //     // $user = User::where('blog', $blog)
+    //     //     ->get();
+    //     $user = User::query()->findOrFail($blog);
 
-        return $user;
-    }
+    //     return $user;
+    // }
 
     public function findHeader($username)
     {

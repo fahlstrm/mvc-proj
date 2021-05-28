@@ -24,6 +24,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => 1,
             'username' => "testaren",
             'header' => 'Testar saker i php',
             'blog' => 'Testbloggen',

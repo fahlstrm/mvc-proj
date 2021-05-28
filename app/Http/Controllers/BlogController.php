@@ -38,8 +38,7 @@ class BlogController extends Controller
 
     public function removePostById($id, Request $request)
     {
-        $post = Blog::query()->find($id);
-
+        $post = Blog::query()->find($request->id);
         return view('remove_post', [
             'title' => "Ta bort inlägg",
             'username' => $request->session()->get('username'),
@@ -48,17 +47,17 @@ class BlogController extends Controller
         ]);
     }
 
-    public function removePost($id)
+    public function removePost($id, Request $request)
     {
-        $blog = Blog::query()->find($id);
-        Blog::query()->find($id)->delete();
+        $blog = Blog::query()->find($request->id);
+        Blog::query()->find($request->id)->delete();
 
         return redirect('/' . $blog['blog']);
     }
 
     public function changePostById($id, Request $request)
     {
-        $post = Blog::query()->find($id);
+        $post = Blog::query()->find($request->id);
 
         return view('change_post', [
             'title' => $request->session()->get('blog'),
@@ -70,12 +69,7 @@ class BlogController extends Controller
 
     public function changePost($id, Request $request)
     {
-        // var_dump($request->id);
         $blog = Blog::query()->find($request->id);
-        // var_dump($id);
-
-        // $blog = Blog::query()->where('id', $id)->get();
-        // var_dump($blog);
 
         $blog->title = $request->input('title');
         $blog->post = $request->input('post');

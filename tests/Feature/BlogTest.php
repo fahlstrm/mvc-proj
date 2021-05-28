@@ -37,28 +37,75 @@ class BlogTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testRemovePost()
-    {
-        $response = $this->get('/remove_post');
-        $response->assertStatus(200);
-    }
 
-        
-    public function testGetRemovePost()
+
+
+    public function testGetChangePostById()
     {
         $blog = Blog::factory()->make();
-        $blog->save();
-
-        $id = Blog::max('id');
 
         $response = $this->withHeaders([
             'X-Header' => 'Value',
-        ])->get('/remove_post/{id}', [
-            'id' => $id,
+        ])->post('/create_post', [
+            'blog' => "Testbloggen",
+            'title' => $blog->title,
+            'post' => $blog->post,
+            ]);
+        
+        $id = Blog::max('id');
+
+        $response = $this->call('GET', '/change_post/{id}', ["id"=>$id]);
+        $response->assertStatus(200);
+    }
+
+    public function testPostChangePostById()
+    {
+        $blog = Blog::factory()->make();
+
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/create_post', [
+            'blog' => "Testbloggen",
+            'title' => $blog->title,
+            'post' => $blog->post,
             ]);
 
-        $response->assertStatus(500);
+        $id = Blog::max('id');
+        
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/change_post/{id}', [
+            'id' => $id,
+            'title' =>"Ny rubrik",
+            'post' => "Uppdaterat"
+            ]);
+        
+        $this->assertDatabaseHas('blog', [
+                'title' => "Ny rubrik",
+            ]);
+            
+        $response->assertStatus(302);
     }
+
+            
+    public function testGetRemovePost()
+    {
+        $blog = Blog::factory()->make();
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/create_post', [
+            'blog' => "Testbloggen",
+            'title' => $blog->title,
+            'post' => $blog->post,
+            ]);
+
+        $id = Blog::max('id');
+
+        $response = $this->call('GET', '/remove_post/{id}', ["id"=>$id]);
+
+        $response->assertStatus(200);
+    }
+
 
     public function testCreateRemove()
     {
@@ -86,10 +133,9 @@ class BlogTest extends TestCase
             'id' => $id
             ]);
 
-        $this->assertDatabaseHas('blog', [
+        $this->assertDatabaseMissing('blog', [
             'id' => $id,
         ]);
-
 
         $response = $this->withHeaders([
             'X-Header' => 'Value',
@@ -102,41 +148,6 @@ class BlogTest extends TestCase
         Blog::query()->where('blog','=', 'Testbloggen')->delete();
         Blog::query()->where('id', '>', '0')->delete();
     }
-
-
-    public function testPostChangePostById()
-    {
-        $blog = Blog::factory()->make();
-
-        $response = $this->withHeaders([
-            'X-Header' => 'Value',
-        ])->post('/create_post', [
-            'blog' => "Testbloggen",
-            'title' => $blog->title,
-            'post' => $blog->post,
-            ]);
-
-        $id = Blog::max('id');
-        var_dump($id);
-        
-        $response = $this->withHeaders([
-            'X-Header' => 'Value',
-        ])->post('/change_post/{id}', [
-            'id' => $id,
-            'title' =>"Ny rubrik",
-            'post' => "Uppdaterat"
-            ]);
-        
-        $this->assertDatabaseHas('blog', [
-                'title' => "Ny rubrik",
-            ]);
-
-            
-        // $response->assertStatus(302);
-
-        
-    }
-
 
 
 }
