@@ -7,7 +7,9 @@
 
 Bloggportalen
 ---------------
-Applikation skriven i ramverket Laravel. Kopplingar mot databas skriva med QB, du ges möjlighet att välja fritt bland de databasleverantörer Laravel har täckning för.
+Applikation skriven i ramverket Laravel. Kopplingar mot databas skriva med QB, du ges möjlighet att välja fritt bland de databasleverantörer 
+[Laravel](https://laravel.com/docs/8.x/database#introduction "Laravel Database") har täckning för.
+
 
 ## Installation
 
