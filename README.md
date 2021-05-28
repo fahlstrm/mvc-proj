@@ -14,4 +14,4 @@ Applikation skriven i ramverket Laravel.
 Då featuretester gjorts mot testdatabas kan inte Scrutinizer generera kodtäckning.
 Följande täckning gäller för controller i applikationen:
 
-![alt text]![Alt text](public/coverage.PNG "Title")
+![Optional Text](../master/public/img/converage.PNG)
