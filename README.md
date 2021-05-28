@@ -7,11 +7,15 @@
 
 Bloggportalen
 ---------------
-Applikation skriven i ramverket Laravel.
+Applikation skriven i ramverket Laravel. Kopplingar mot databas skriva med QB, du ges möjlighet att välja fritt bland de databasleverantörer Laravel har täckning för.
+
+## Installation
 
 
-## Coveraage
+## Coverage
 Då featuretester gjorts mot testdatabas kan inte Scrutinizer generera kodtäckning.
 Följande täckning gäller för controller i applikationen:
 
 ![Optional Text](/public/img/coverage.PNG)
+
+För att köra tester krävs att en sqlite-databas skapas och filen adderas till mappen 'database'.
