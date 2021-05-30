@@ -1,0 +1,1 @@
+C:\Users\Frida\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\BlogController.php:135	Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'countPosts'.

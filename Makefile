@@ -1,5 +1,5 @@
 BIN        := .bin
-VENDORBIN  := vendor/bin
+VENDORBIN  := 	vendor/bin
 PHPLOC     := $(BIN)/phploc
 PHPCS      := $(BIN)/phpcs
 PHPCBF     := $(BIN)/phpcbf
@@ -20,6 +20,7 @@ clean-all: clean
 
 install: install-php-tools
 	composer install
+	chmod 775 -R vendor
 
 install-php-tools:
 	install -d $(BIN)
