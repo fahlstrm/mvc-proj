@@ -3,16 +3,11 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-// use Database\Seeders\OrderStatusSeeder;
-
 use Illuminate\Contracts\Auth\Authenticatable;
 use Tests\TestCase;
 use Tests\Feature\PDO;
-
 use App\Models\User;
 use App\Http\Controllers\UserController;
-
-
 
 class RouteTest extends TestCase
 {
@@ -51,15 +46,13 @@ class RouteTest extends TestCase
             'blog' => $user->blog
             ]);
 
-        
         $this->assertDatabaseHas('user', [
             'username' => $user->username,
         ]);
 
         $response->assertStatus(302);
-        User::query()->where('username','=', 'testaren')->delete();
+        User::query()->where('username', '=', 'testaren')->delete();
     }
-
 
     public function testLoginUser()
     {
@@ -83,8 +76,7 @@ class RouteTest extends TestCase
             ]);
 
         $response->assertStatus(200);
-        User::query()->where('username','=', 'testaren')->delete();
-
+        User::query()->where('username', '=', 'testaren')->delete();
     }
 
     public function testFailLogin()
@@ -111,10 +103,8 @@ class RouteTest extends TestCase
         $response = $this->get('/login/{username}');
 
         $response->assertStatus(405);
-        User::query()->where('username','=', 'testaren')->delete();
-
+        User::query()->where('username', '=', 'testaren')->delete();
     }
-
 
     public function testLogout()
     {
@@ -123,12 +113,4 @@ class RouteTest extends TestCase
         $response->assertStatus(302);
         // $response->assertRedirect($uri);
     }
-
-    // public function testCreateUser()
-    // {
-    //     $response = $this->get('/create_blog');
-    //     $response->assertStatus(200);
-    // }
-
-
 }

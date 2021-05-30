@@ -6,7 +6,6 @@ use App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-
 class BlogFactory extends Factory
 {
     /**

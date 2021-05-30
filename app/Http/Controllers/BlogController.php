@@ -27,7 +27,7 @@ class BlogController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return redirect('/'.$blog->blog)->with([
+        return redirect('/' . $blog->blog)->with([
             'title' => $request->session()->get('blog'),
             'username' => $request->session()->get('username'),
             'header' =>  $request->session()->get('header'),
@@ -36,9 +36,9 @@ class BlogController extends Controller
         ]);
     }
 
-    public function removePostById($id, Request $request)
+    public function removePostById(Request $request)
     {
-        $post = Blog::query()->find($request->id);
+        $post = Blog::query()->find($request['id']);
         return view('remove_post', [
             'title' => "Ta bort inlägg",
             'username' => $request->session()->get('username'),
@@ -47,17 +47,17 @@ class BlogController extends Controller
         ]);
     }
 
-    public function removePost($id, Request $request)
+    public function removePost(Request $request)
     {
-        $blog = Blog::query()->find($request->id);
-        Blog::query()->find($request->id)->delete();
+        $blog = Blog::query()->find($request['id']);
+        Blog::query()->find($request['id'])->delete();
 
         return redirect('/' . $blog['blog']);
     }
 
-    public function changePostById($id, Request $request)
+    public function changePostById(Request $request)
     {
-        $post = Blog::query()->find($request->id);
+        $post = Blog::query()->find($request['id']);
 
         return view('change_post', [
             'title' => $request->session()->get('blog'),
@@ -67,13 +67,13 @@ class BlogController extends Controller
         ]);
     }
 
-    public function changePost($id, Request $request)
+    public function changePost(Request $request)
     {
-        $blog = Blog::query()->find($request->id);
-
+        // $blog = Blog::query()->find($request['id']);
+        $blog = Blog::query()->where('id', '=', $request['id'])->first();
+        // var_dump($blog);
         $blog->title = $request->input('title');
         $blog->post = $request->input('post');
-        
         $blog->save();
 
         return redirect('/' . $blog['blog']);
@@ -138,7 +138,6 @@ class BlogController extends Controller
             ->orderBy('posts', 'desc')
             ->get();
 
-        $joines = null;
         return $joined;
     }
 
