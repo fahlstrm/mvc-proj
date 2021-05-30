@@ -15,8 +15,8 @@ class BlogController extends Controller
     public function createPost(Request $request)
     {
         $blog = new Blog();
-
-        $blog->blog =  $request->input('blog');
+    
+        $blog->blog =  $request->session()->get('blog');
         $blog->title = $request->input('title');
         $blog->post = $request->input('post');
 
