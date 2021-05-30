@@ -2,7 +2,6 @@
 
 <div class="container">
     <div class="form post">
-        {{ session('blog') }}
         <form method="POST" action="{{ url('/create_post') }}">
             @csrf
             <label for="title">Rubrik:</label>
